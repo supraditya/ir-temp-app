@@ -9,6 +9,9 @@ Contains an arduino program for the Uno R3, and a Python script to write it's ou
 - Breadboard
 
 ## Required Software
-- Arduino IDE (plus all required libraries)
+- Arduino IDE (plus all required libraries mentioned in code)
 - Python
 - Python libraries: serial
+
+## To Use
+- In ```temp_script.py``` Make sure to change the ```serial_port``` variable's value to the port your Arduino is connected to

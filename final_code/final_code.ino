@@ -30,8 +30,13 @@ int readButtonCurrentState;    // the current reading from the input pin
 int exitButtonLastState=HIGH;
 int exitButtonCurrentState;
 
+//  Flag to check when the temperature operation is being run for the first time, so that column headings are printed only once
+  int first_time_flag=0;
+
 void setup() {
   Serial.begin(9600);
+
+
   
   // the pull-up input pin will be HIGH when the switch is open and LOW when the switch is closed.
   pinMode(BUTTON_PIN, INPUT_PULLUP);
@@ -65,8 +70,14 @@ void loop() {
     float avgObjectC=0.0;
     float avgAmbientF=0.0;
     float avgObjectF=0.0;
-//    Serial.println("Temps are in *C.");
-    Serial.println("Amb1,Obj1,Amb2,Obj2,Amb3,Obj3,Avg_Amb,Avg_Obj");
+
+    //Temps are in *C
+    if(first_time_flag==0)
+    {
+      Serial.println("Amb1,Obj1,Amb2,Obj2,Amb3,Obj3,Avg_Amb,Avg_Obj");
+      first_time_flag++;
+    }
+
     while (t>0)
     {
         Serial.print(mlx.readAmbientTempC());Serial.print(",");
@@ -81,6 +92,10 @@ void loop() {
     Serial.print(avgAmbientC/3.0);Serial.print(",");
     Serial.print(avgObjectC/3.0);Serial.println(",");
 
+//    Serial.println("exit");
+  }
+  if(exitButtonLastState == LOW && exitButtonCurrentState == HIGH)
+  {
     Serial.println("exit");
   }
 
@@ -89,13 +104,8 @@ void loop() {
 
   // save the last state
   readButtonLastState = readButtonCurrentState;
+  exitButtonLastState = exitButtonCurrentState;
 
-  if(exitButtonLastState == LOW && exitButtonCurrentState == HIGH)
-  {
-    Serial.println("exit");
-    exitButtonLastState = exitButtonCurrentState;
-    while(1);
-  }
 
 
 }
