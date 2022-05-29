@@ -19,6 +19,7 @@ while True:
         output_file.close()
         break
     else:
+        line=line.replace("\n", "")
         print(line)
     output_file.write(line)
     # if keyboard.read_key()=='q':

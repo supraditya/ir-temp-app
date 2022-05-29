@@ -1,17 +1,3 @@
-/***************************************************
-  This is a library example for the MLX90614 Temp Sensor
-  Designed specifically to work with the MLX90614 sensors in the
-  adafruit shop
-  ----> https://www.adafruit.com/products/1747 3V version
-  ----> https://www.adafruit.com/products/1748 5V version
-  These sensors use I2C to communicate, 2 pins are required to
-  interface
-  Adafruit invests time and resources providing this open source code,
-  please support Adafruit and open-source hardware by purchasing
-  products from Adafruit!
-  Written by Limor Fried/Ladyada for Adafruit Industries.
-  BSD license, all text above must be included in any redistribution
- ****************************************************/
 
 #include <Adafruit_MLX90614.h>
 
@@ -80,8 +66,8 @@ void loop() {
 
     while (t>0)
     {
-        Serial.print(mlx.readAmbientTempC());Serial.print(",");
-        Serial.print(mlx.readObjectTempC());Serial.print(",");
+      Serial.print(mlx.readAmbientTempC());Serial.print(",");
+      Serial.print(mlx.readObjectTempC());Serial.print(",");
       avgAmbientC+=mlx.readAmbientTempC();
       avgObjectC+=mlx.readObjectTempC();
       avgAmbientF+=mlx.readAmbientTempF();
@@ -90,9 +76,8 @@ void loop() {
       delay(500);
     }
     Serial.print(avgAmbientC/3.0);Serial.print(",");
-    Serial.print(avgObjectC/3.0);Serial.println(",");
+    Serial.print(avgObjectC/3.0);Serial.println();
 
-//    Serial.println("exit");
   }
   if(exitButtonLastState == LOW && exitButtonCurrentState == HIGH)
   {
