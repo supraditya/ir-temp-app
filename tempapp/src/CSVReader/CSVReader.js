@@ -3,15 +3,14 @@ import styles from "./CSVReader.module.css";
 
 import { useCSVReader } from "react-papaparse";
 
-function CSVReader() {
+const CSVReader=(props)=> {
   const { CSVReader } = useCSVReader();
 
   return (
     <CSVReader
       onUploadAccepted={(results) => {
-        console.log("---------------------------");
-        console.log(results);
-        console.log("---------------------------");
+        props.setData(results.data);
+        props.dataUploaded(true);
       }}
     >
       {({ getRootProps, acceptedFile, ProgressBar, getRemoveFileProps }) => (
