@@ -1,0 +1,14 @@
+.nodesDiv
+{
+  border-radius: 2%;
+  width: 90%;
+  max-height: 400px;
+  margin: auto;
+  box-shadow: 0 8px 8px #ccc;
+  padding: 1%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}

@@ -9,7 +9,10 @@ const CSVReader=(props)=> {
   return (
     <CSVReader
       onUploadAccepted={(results) => {
-        props.setData(results.data);
+        var temp = [];
+        temp=results.data;
+        temp=temp.splice(1,temp.length-2);
+        props.setData(temp);
         props.dataUploaded(true);
       }}
     >
@@ -20,7 +23,7 @@ const CSVReader=(props)=> {
               <button type="button" {...getRootProps()}>
                 Browse files
               </button>
-              <div style={{marginLeft: '1%'}}>{acceptedFile && acceptedFile.name}</div>
+              <div style={{marginLeft: '2%'}}>{acceptedFile && acceptedFile.name}</div>
             </div>
             <button {...getRemoveFileProps()}>Remove</button>
           </div>

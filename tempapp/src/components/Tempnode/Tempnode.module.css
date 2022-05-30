@@ -1,0 +1,12 @@
+.tempnode
+{
+    width: 15%;
+    height: 98px;
+    margin-left: 1%;
+    margin-right: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+
+}
