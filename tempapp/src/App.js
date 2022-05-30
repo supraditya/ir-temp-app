@@ -12,8 +12,8 @@ function App() {
       <br></br>
       {dataUploaded && <div className="nodesDiv">
         {
-          CSVTempDataState.map((objTempReading) => {
-            return(<Tempnode AvgAmbTemp={objTempReading[6]} AvgObjTemp={objTempReading[7]}/>)
+          CSVTempDataState.map((DataRow, i) => {
+            return(<Tempnode key={i} index={i+1} AvgAmbTemp={DataRow[6]} AvgObjTemp={DataRow[7]}/>)
           })
         }
         </div>}
