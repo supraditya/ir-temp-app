@@ -1,6 +1,7 @@
 .nodesDiv
 {
-  border-radius: 2%;
+  border-radius: 4px;
+  /* border-radius: 4%; */
   width: 90%;
   max-height: 400px;
   margin: auto;

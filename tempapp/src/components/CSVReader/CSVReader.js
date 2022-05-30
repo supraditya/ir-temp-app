@@ -3,15 +3,15 @@ import styles from "./CSVReader.module.css";
 
 import { useCSVReader } from "react-papaparse";
 
-const CSVReader=(props)=> {
+const CSVReader = (props) => {
   const { CSVReader } = useCSVReader();
 
   return (
     <CSVReader
       onUploadAccepted={(results) => {
         var temp = [];
-        temp=results.data;
-        temp=temp.splice(1,temp.length-2);
+        temp = results.data;
+        temp = temp.splice(1, temp.length - 2);
         props.setData(temp);
         props.dataUploaded(true);
       }}
@@ -20,12 +20,24 @@ const CSVReader=(props)=> {
         <>
           <div className={styles.uploadDiv}>
             <div className={styles.fileSelectDiv}>
-              <button type="button" {...getRootProps()}>
+              <button
+                className={styles.fileUploadButton}
+                type="button"
+                {...getRootProps()}
+              >
                 Browse files
               </button>
-              <div style={{marginLeft: '2%'}}>{acceptedFile && acceptedFile.name}</div>
             </div>
-            <button {...getRemoveFileProps()}>Remove</button>
+            <div className={styles.fileNameDiv}>
+              {acceptedFile && acceptedFile.name}
+            </div>
+
+            <button
+              className={styles.clearFileButton}
+              {...getRemoveFileProps()}
+            >
+              Clear File
+            </button>
           </div>
           <div className={styles.progressBar}>
             <ProgressBar />
@@ -34,5 +46,5 @@ const CSVReader=(props)=> {
       )}
     </CSVReader>
   );
-}
+};
 export default CSVReader;
