@@ -8,6 +8,7 @@ function App() {
   const [dataUploaded, setdataUploaded] = useState(false);
   return (
     <div className="App">
+      <p className="header">Crop Temperature Heatmap</p>
       <CSVReader setData={setCSVTempDataState} dataUploaded={setdataUploaded} />
       <br></br>
       {dataUploaded && <div className="nodesDiv">
