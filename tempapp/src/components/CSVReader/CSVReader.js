@@ -25,7 +25,7 @@ const CSVReader = (props) => {
                 type="button"
                 {...getRootProps()}
               >
-                Browse files
+                Upload File
               </button>
             </div>
             <div className={styles.fileNameDiv}>
