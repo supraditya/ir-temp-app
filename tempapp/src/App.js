@@ -1,9 +1,11 @@
 import './App.css';
+import CSVReader from './CSVReader/CSVReader';
+
 
 function App() {
   return (
     <div className="App">
-      App
+      <CSVReader/>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+.uploadDiv
+{
+    border: solid 1px black;
+    width: 50%;
+    margin: auto;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-direction: column; */
+    /* text-align: center; */
+}
+.fileSelectDiv
+{
+    display: flex;
+    align-items: center;
+}
+.progressBar
+{
+    width: 50%;
+    margin: auto;
+}
