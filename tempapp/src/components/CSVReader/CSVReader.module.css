@@ -34,6 +34,7 @@
     width: 100px;
     height: 50px;
     border-radius: 4%;
+    cursor: pointer;
     /* box-shadow: 0 2px 2px 2px #eee; */
 }
 .clearFileButton
@@ -46,6 +47,7 @@
     width: 100px;
     height: 50px;
     border-radius: 4%;
+    cursor: pointer;
     /* box-shadow: 0 2px 2px 2px #eee; */
 }
 .fileNameDiv

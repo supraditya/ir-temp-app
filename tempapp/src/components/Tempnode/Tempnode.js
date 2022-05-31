@@ -14,7 +14,7 @@ const Tempnode = (props) => {
   const [MouseOver, setMouseOver] = useState(false);
   let tempNode;
   let temp_diff = props.AvgObjTemp - props.AvgAmbTemp;
-  console.log(temp_diff);
+  // console.log(temp_diff);
   if (temp_diff < 2) {
     tempNode = (
       <div className={styles.tempnodeInner} style={{ backgroundColor: green }}>
