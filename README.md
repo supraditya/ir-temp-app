@@ -1,4 +1,4 @@
-# ir-temp-app
+# IR-temp-app
 Contains an arduino program for the Uno R3, and a Python script to write it's outputs to a CSV file. The program records the ambient and object temperatures using an Adafruit MLX90614 sensor
 
 ## Required Hardware
